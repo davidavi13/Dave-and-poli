@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+   emailjs.init("ViRnttLYRJfLMDkMg");  <!-- Твой личный ключ -->
+</script>
+</head>
+<body>
+    <header><h1>Корзина</h1></header>
+    <nav>
+        <div style="text-align: center; padding: 10px;">
+    <span id="cart-counter" style="font-size: 18px; font-weight: bold;"></span>
+</div>
+
+        <a href="index.html">Главная</a>
+        <a href="cart.html">Корзина</a>
+        <a href="about.html">О нас</a>
+    </nav>
+
+    <div class="container" id="cart-items"></div>
+    <div style="text-align: center; margin-top: 20px;">
+    <button onclick="openOrderForm()" style="padding: 10px 20px; font-size: 16px;">Заказать</button>
+</div>
+
+<div id="orderModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.6); align-items:center; justify-content:center;">
+    <div style="background:#fff; padding:20px; border-radius:8px; max-width:400px; margin:auto;">
+        <h3>Оформление заказа</h3>
+        <form id="orderForm">
+            <label>Имя:</label><br>
+            <input type="text" name="user_name" required><br><br>
+
+            <label>Контакт (телефон или Instagram):</label><br>
+            <input type="text" name="user_contact" required><br><br>
+
+            <button type="submit">Отправить заказ</button>
+            <button type="button" onclick="closeOrderForm()">Отмена</button>
+        </form>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
